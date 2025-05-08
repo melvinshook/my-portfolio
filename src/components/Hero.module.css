@@ -1,0 +1,29 @@
+/* Hero.module.css */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('../assets/images/IMG_8839.JPG');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+}
