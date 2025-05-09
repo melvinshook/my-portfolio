@@ -86,3 +86,8 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
