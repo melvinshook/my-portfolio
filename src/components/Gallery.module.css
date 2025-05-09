@@ -10,9 +10,15 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
+  padding: 1rem;
 }
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }}
 
 .image {
   width: 100%;
@@ -20,6 +26,7 @@
   border-radius: 8px;
   object-fit: cover;
   cursor: pointer;
+  
 }
 
 .lightboxOverlay {
@@ -67,5 +74,6 @@
   font-size: 1.5rem;
   cursor: pointer;
 }
+
 
   
