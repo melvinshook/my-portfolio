@@ -1,33 +1,19 @@
-/* General layout */
 #root {
-  width: 100%;
-  max-width: 100%;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
-  box-sizing: border-box;
 }
 
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-/* Logo animation */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
-
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -41,54 +27,39 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-/* Card styling */
-.card {
-  padding: 2em;
-}
-
-/* Docs text */
-.read-the-docs {
-  color: #888;
-}
-
-/* Media responsiveness */
-img, video {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Responsive layout for mobile */
 @media (max-width: 768px) {
-  .navbar,
-  .gallery,
-  .videoReel,
-  .about,
-  .contact,
-  .footer {
-    padding: 1rem;
+  .navbar {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .card {
-    padding: 1rem;
-  }
-
-  h1, h2, h3, p {
-    font-size: 1rem;
+    align-items: flex-start;
   }
 
   .gallery img {
     width: 100%;
     height: auto;
   }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.container {
+  max-width: 100%;
+  padding: 1rem;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
 }
