@@ -1,11 +1,13 @@
 .gallerySection {
   padding: 4rem 2rem;
   text-align: center;
+  background-color: black;
 }
 
 .title {
   font-size: 2rem;
   margin-bottom: 1.5rem;
+  color: white;
 }
 
 .grid {
