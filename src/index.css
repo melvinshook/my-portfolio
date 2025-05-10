@@ -13,7 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 a {
   font-weight: 500;
   color: #646cff;
@@ -25,10 +24,20 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  padding: 0;
+  width: 100%;
+  /* Removed display: flex and place-items: center */
+  /* Removed min-width: 320px */
   min-height: 100vh;
+}
+
+/* Add this to make sure root fills available width */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -60,7 +69,6 @@ button:focus-visible {
   padding: 1rem;
 }
 
-
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -72,7 +80,6 @@ button:focus-visible {
     height: auto;
   }
 }
-
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -90,4 +97,9 @@ button:focus-visible {
 img, video {
   max-width: 100%;
   height: auto;
+}
+
+/* Add this for better responsive behavior */
+* {
+  box-sizing: border-box;
 }
