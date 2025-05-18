@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./About.module.css";
+import styles from "./About.module.css"; // keep if you want scoped styles
 
-export default function About() {
+function About() {
   return (
-    <section id="about" className={styles.aboutSection}>
+    <main className={styles.aboutSection}>
       <h2 className={styles.title}>About Me</h2>
       <div className={styles.content}>
         <p>
@@ -12,6 +12,8 @@ export default function About() {
         <p>Let's turn your visions into reality</p>
         {/* More text here */}
       </div>
-    </section>
+    </main>
   );
 }
+
+export default About;

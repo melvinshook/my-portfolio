@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./Hero.module.css";
 
-export default function Hero() {
+function Hero() {
   return (
     <section className={styles.hero}>
       <div className={styles.overlay}>
@@ -12,3 +12,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default Hero;

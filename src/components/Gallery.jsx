@@ -13,7 +13,7 @@ import photo8 from "../assets/images/photo8.jpg";
 
 const photos = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8];
 
-export default function Gallery() {
+function Gallery() {
   //State for controlling the lightbox visibility and selected image
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
@@ -65,3 +65,5 @@ export default function Gallery() {
     </section>
   );
 }
+
+export default Gallery;

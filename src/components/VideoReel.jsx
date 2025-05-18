@@ -9,7 +9,7 @@ import reel4 from "../assets/videos/reel4.mp4";
 
 const videos = [reel1, reel2, reel3, reel4];
 
-export default function VideoReel() {
+function VideoReel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(null);
 
@@ -61,3 +61,5 @@ export default function VideoReel() {
     </section>
   );
 }
+
+export default VideoReel;
