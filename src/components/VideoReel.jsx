@@ -6,8 +6,9 @@ import reel1 from "../assets/videos/reel1.mp4";
 import reel2 from "../assets/videos/reel2.mp4";
 import reel3 from "../assets/videos/reel3.mp4";
 import reel4 from "../assets/videos/reel4.mp4";
+import reel5 from "../assets/videos/reel5.mp4";
 
-const videos = [reel1, reel2, reel3, reel4];
+const videos = [reel1, reel2, reel3, reel4, reel5];
 
 function VideoReel() {
   const [isModalOpen, setIsModalOpen] = useState(false);
