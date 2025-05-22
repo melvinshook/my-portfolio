@@ -38,6 +38,7 @@ function VideoReel() {
             loop
             playsInline
             autoPlay
+            preload="auto"
           />
         ))}
       </div>
