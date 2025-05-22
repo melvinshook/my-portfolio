@@ -1,4 +1,4 @@
-/* app.css */
+/* app.css - Improved Responsive Version */
 
 * {
   box-sizing: border-box;
@@ -10,58 +10,229 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: sans-serif;
+  /* Prevent horizontal scrolling on mobile */
+  overflow-x: hidden;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
   padding: 1rem;
+  /* Ensure consistent spacing on all devices */
 }
 
 img, video {
   max-width: 100%;
   height: auto;
   display: block;
+  /* Prevent images from breaking layout */
+  object-fit: cover;
 }
 
 .container {
   max-width: 100%;
   padding: 1rem;
+  /* Add container width limits for better readability */
+  margin: 0 auto;
 }
 
-/* Responsive Navbar */
+/* Enhanced Responsive Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center;
+  padding: 0.5rem 0;
+  /* Add spacing and better mobile behavior */
+  gap: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* Gallery Grid System */
+.gallery {
+  display: grid;
+  gap: 1rem;
+  /* Responsive grid that adapts to screen size */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 2rem 0;
+}
 
-  .gallery img {
-    width: 100%;
-    height: auto;
-  }
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
 
-  .video-thumbnail {
-    width: 100%;
-    height: auto;
-  }
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Typography Scaling */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Button Improvements */
+button, .btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 44px; /* Minimum touch target size */
+  min-width: 44px;
+}
+
+/* Navigation Menu for Mobile */
+.nav-menu {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 /* Utility classes */
 .card {
-  padding: 2em;
+  padding: 1.5rem;
   margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .read-the-docs {
   color: #888;
+  font-size: 0.9rem;
 }
 
+/* Mobile-First Responsive Design */
+@media screen and (max-width: 480px) {
+  #root {
+    padding: 0.5rem;
+  }
+  
+  .container {
+    padding: 0.5rem;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-menu a {
+    padding: 0.75rem;
+    text-align: center;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  /* Ensure text doesn't get too small */
+  p {
+    font-size: 1rem;
+  }
+}
 
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .container {
+    max-width: 1200px;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Landscape orientation on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  #root {
+    padding: 0.25rem;
+  }
+  
+  .navbar {
+    flex-direction: row;
+    padding: 0.25rem 0;
+  }
+  
+  .nav-menu {
+    flex-direction: row;
+  }
+}

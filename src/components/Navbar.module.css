@@ -1,7 +1,7 @@
 /* Navbar.module.css */
 
 .navbar {
-  width: 98%; /* Make it stretch across the screen */
+  width: 100%; /* Make it stretch across the screen */
   display: flex;
   justify-content: space-between;
   align-items: center;
