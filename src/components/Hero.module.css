@@ -76,9 +76,11 @@
         height: 100vh;
         min-height: 600px;
         padding-top: 60px;
-        /* Optimize background for mobile */
-        background-size: cover;
+        /* Show full image without cropping */
+        background-size: contain;
         background-position: center center;
+        /* Add background color for areas not covered by image */
+        background-color: #1a1a1a;
     }
     
     .overlay {
@@ -104,8 +106,10 @@
         min-height: 500px;
         height: 100vh;
         padding-top: 50px;
-        /* Better mobile background positioning */
-        background-position: center 30%;
+        /* Show full image without cropping on small screens */
+        background-size: contain;
+        background-position: center center;
+        background-color: #1a1a1a;
     }
     
     .overlay {
