@@ -37,6 +37,7 @@ function VideoReel() {
             muted
             loop
             playsInline
+            autoPlay
           />
         ))}
       </div>
