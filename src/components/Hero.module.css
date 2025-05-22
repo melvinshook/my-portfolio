@@ -1,16 +1,26 @@
-/* Hero.module.css */
+/* Hero.module.css - Responsive Version */
 
 .hero {
     position: relative;
+    /* Use min-height instead of fixed height for better mobile experience */
+    min-height: 100vh;
     height: 100vh;
     width: 100%;
     background-image: url('../assets/images/IMG_8839.JPG');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    /* Critical for mobile - use scroll instead of fixed */
+    background-attachment: scroll;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Ensure no horizontal overflow */
+    overflow: hidden;
+    /* Account for fixed navbar */
+    padding-top: 80px;
+    box-sizing: border-box;
 }
 
 .overlay {
@@ -18,13 +28,155 @@
     padding: 2rem;
     text-align: center;
     border-radius: 10px;
+    /* Make overlay responsive */
+    max-width: 90%;
+    width: 100%;
+    max-width: 800px;
+    /* Add backdrop blur for modern look */
+    backdrop-filter: blur(2px);
+    /* Smooth transitions */
+    transition: all 0.3s ease;
 }
 
 .title {
-    font-size: 3rem;
+    /* Responsive font sizing */
+    font-size: clamp(2rem, 6vw, 3rem);
     margin-bottom: 1rem;
+    line-height: 1.1;
+    /* Prevent text overflow */
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    /* Responsive font sizing */
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    line-height: 1.4;
+    margin-bottom: 0;
+    /* Improve readability */
+    font-weight: 400;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+    .hero {
+        padding-top: 70px;
+    }
+    
+    .overlay {
+        padding: 1.5rem;
+        max-width: 85%;
+    }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+    .hero {
+        /* Adjust height for mobile - account for address bars */
+        height: 100vh;
+        min-height: 600px;
+        padding-top: 60px;
+        /* Optimize background for mobile */
+        background-size: cover;
+        background-position: center center;
+    }
+    
+    .overlay {
+        padding: 1.5rem;
+        max-width: 95%;
+        border-radius: 8px;
+        /* Less blur on mobile for performance */
+        backdrop-filter: blur(1px);
+    }
+    
+    .title {
+        margin-bottom: 0.75rem;
+    }
+    
+    .subtitle {
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+    }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 480px) {
+    .hero {
+        min-height: 500px;
+        height: 100vh;
+        padding-top: 50px;
+        /* Better mobile background positioning */
+        background-position: center 30%;
+    }
+    
+    .overlay {
+        padding: 1rem;
+        max-width: 95%;
+        border-radius: 6px;
+        /* Remove backdrop filter on very small screens for performance */
+        backdrop-filter: none;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .title {
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    .subtitle {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* Landscape orientation on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: 100vh;
+        min-height: 400px;
+        padding-top: 40px;
+    }
+    
+    .overlay {
+        padding: 1rem 1.5rem;
+        max-width: 80%;
+    }
+    
+    .title {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+        margin-bottom: 0.5rem;
+    }
+    
+    .subtitle {
+        font-size: clamp(0.875rem, 2.5vw, 1.25rem);
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero {
+        /* You might want to provide a higher resolution image for retina displays */
+        /* background-image: url('../assets/images/IMG_8839@2x.JPG'); */
+    }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .overlay {
+        transition: none;
+    }
+}
+
+/* Very large screens */
+@media screen and (min-width: 1200px) {
+    .overlay {
+        max-width: 900px;
+        padding: 3rem;
+    }
+    
+    .title {
+        font-size: 3.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.75rem;
+    }
 }
