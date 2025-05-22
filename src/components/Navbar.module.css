@@ -61,3 +61,40 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  z-index: 1100; /* Make sure it’s clickable above navLinks */
+}
+
+/* Mobile layout adjustments */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .navLinks li {
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
+}
